@@ -1,0 +1,47 @@
+Ablauf Programm
+
+core.memberlist_modify_template_vars
+
+$start	= $request->variable('start', 0);
+$sortby	= $request->variable('imcsort', '');
+$sort_dir = $request->variable('sd', 'a');
+$result = $db->sql_query_limit($sql, $config['topics_per_page'], $start);
+
+if ($config['load_cpf_memberlist'])
+SELECT field_name FROM phpbb_profile_fields WHERE field_show_on_ml = 1
+
+
+	* @event core.memberlist_memberrow_before
+	* @var array	user_list			Array containing list of users
+	
+custom_fields.PROFILE_FIELD_NAME
+
+
+template destroy_block_vars(string $memberrow) 
+
+++++++++ SQL WHERE $first_char berücksichtigen ++++++++++++
+
+SELECT username, pf_phpbb_location FROM phpbb_users LEFT JOIN phpbb_profile_fields_data ON phpbb_users.user_id = phpbb_profile_fields_data.user_id  ORDER BY phpbb_profile_fields_data.pf_phpbb_location ASC
+
+"SELECT u.user_id 
+ FROM phpbb_users u 
+ LEFT JOIN phpbb_profile_fields_data pf 
+	ON (u.user_id = pf.user_id )
+ WHERE u.user_type IN (0, 3) 
+ ORDER BY pf.pf_phpbb_location ASC"
+
+Template Vars zuweisen
+memberrow.S_ROW_COUNT
+memberrow.USERNAME
+memberrow.USERNAME_FULL
+memberrow.A_USERNAME
+memberrow.S_INACTIVE
+memberrow.RANK_IMG
+memberrow.RANK_TITLE
+memberrow.POSTS
+memberrow.JOINED
+memberrow.LAST_ACTIVE
+memberrow.custom_fields.S_PROFILE_CONTACT		(Link vorhanden)
+						.PROFILE_FIELD_CONTACT	(Link)
+						.PROFILE_FIELD_VALUE	(Name)
+

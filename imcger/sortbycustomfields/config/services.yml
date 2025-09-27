@@ -1,0 +1,12 @@
+services:
+    imcger.sortbycustomfields.listener:
+        class: imcger\sortbycustomfields\event\main_listener
+        arguments:
+            - '@pagination'
+            - '@dbal.conn'
+            - '@config'
+            - '@profilefields.manager'
+            - '@template'
+            - '@request'
+        tags:
+            - { name: event.listener }
