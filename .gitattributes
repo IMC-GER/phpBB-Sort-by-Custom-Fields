@@ -4,4 +4,4 @@
 .gitattributes export-ignore
 .editorconfig export-ignore
 /README.md export-ignore
-/version_check.json export-ignore
+/versions_check.json export-ignore
