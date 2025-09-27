@@ -1,9 +1,9 @@
 {
     "stable": {
         "1.0": {
-            "current": "1.0.0",
-            "announcement": "https://www.phpbb.de/community/viewtopic.php?t=246840",
-            "download": "https://www.phpbb.com/customise/db/extension/showhiddenpassword/",
+            "current": "0.3.0",
+            "announcement": "https://www.phpbb.de/community/viewtopic.php?t=247781",
+            "download": "https://github.com/IMC-GER/phpBB-Sort-by-Custom-Fields/archive/refs/heads/main.zip",
             "eol": null,
             "security": false
         }

@@ -130,11 +130,14 @@ class main_listener implements EventSubscriberInterface
 		{
 			$this->template->destroy_block_vars('custom_fields');
 
-			$cp_row = $this->pf_manager->generate_profile_fields_template_headlines('field_show_on_ml');
-			foreach ($cp_row as $profile_field)
+			$cpf_rows = $this->pf_manager->generate_profile_fields_template_headlines('field_show_on_ml');
+			foreach ($cpf_rows as $cpf)
 			{
-				$profile_field['PROFILE_FIELD_NAME'] = '<a href="./memberlist.php?mode=' . $first_char_para . '&amp;sk=a&amp;sd=' . (($this->sortby == $profile_field['PROFILE_FIELD_IDENT'] && $this->sort_dir == 'a') ? 'd' : 'a') . '&amp;imcsort=' . $profile_field['PROFILE_FIELD_IDENT'] . '">' . $profile_field["PROFILE_FIELD_NAME"] . '</a>';
-				$this->template->assign_block_vars('custom_fields', $profile_field);
+				$sort_dir = '&amp;sd=' . (($this->sortby == $cpf['PROFILE_FIELD_IDENT'] && $this->sort_dir == 'a') ? 'd' : 'a');
+				$cpf_sort = '&amp;imcsort=' . $cpf['PROFILE_FIELD_IDENT'];
+
+				$cpf['PROFILE_FIELD_NAME'] = '<a href="./memberlist.php?mode=&amp;sk=a' . $sort_dir . $cpf_sort . $first_char_para . '">' . $cpf["PROFILE_FIELD_NAME"] . '</a>';
+				$this->template->assign_block_vars('custom_fields', $cpf);
 			}
 		}
 	}

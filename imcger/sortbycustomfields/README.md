@@ -19,6 +19,9 @@ Go to "ACP" > "Customise" > "Manage extensions" and enable the "Sort by custom f
 
 ## Changelog
 
+### v0.3.0 (27-09-2025)
+- Minor code change
+
 ### v0.2.0 (26-09-2025)
 - Published
 

@@ -1,9 +1,9 @@
 {
     "name": "imcger/sortbycustomfields",
     "type": "phpbb-extension",
-    "description": "",
-    "version": "0.2.0",
-    "time": "2025-09-26",
+    "description": "This extension allows you to sort the member list according to the custom profile fields.",
+    "version": "0.3.0",
+    "time": "2025-09-27",
     "keywords": ["phpbb", "extension", "sortbycustomfields"],
     "license": "GPL-2.0-only",
     "authors": [
