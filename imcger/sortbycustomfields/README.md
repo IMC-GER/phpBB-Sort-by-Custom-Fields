@@ -4,7 +4,8 @@
 This extension allows you to sort the member list according to the custom profile fields.
 
 ## Requirements
-- phpBB 3.3.0 or higher
+- phpBB 3.3.1 or higher
+- php 8.0.0 or higher
 
 ## Installation
 Copy the extension to `phpBB3/ext/imcger/sortbycustomfields`.
@@ -18,6 +19,11 @@ Go to "ACP" > "Customise" > "Manage extensions" and enable the "Sort by custom f
 - Go to "ACP" > "Customise" > "Manage extensions" and enable the "Sort by custom fields" extension.
 
 ## Changelog
+
+### v0.4.0 (30-09-2025)
+- Changed to constructor property promotion
+- Changed add Extension sufix to main_listener
+- php min 8.0.0
 
 ### v0.3.0 (27-09-2025)
 - Minor code change

@@ -1,6 +1,6 @@
 services:
     imcger.sortbycustomfields.listener:
-        class: imcger\sortbycustomfields\event\main_listener
+        class: imcger\sortbycustomfields\event\sbcf_main_listener
         arguments:
             - '@pagination'
             - '@dbal.conn'

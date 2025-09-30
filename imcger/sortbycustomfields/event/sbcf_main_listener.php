@@ -12,15 +12,8 @@ namespace imcger\sortbycustomfields\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class main_listener implements EventSubscriberInterface
+class sbcf_main_listener implements EventSubscriberInterface
 {
-	protected object $pagination;
-	protected object $db;
-	protected object $config;
-	protected object $pf_manager;
-	protected object $template;
-	protected object $request;
-
 	protected int $total_users;
 	protected string $sortby;
 	protected string $sort_dir;
@@ -28,21 +21,14 @@ class main_listener implements EventSubscriberInterface
 
 	public function __construct
 	(
-		\phpbb\pagination $pagination,
-		\phpbb\db\driver\driver_interface $db,
-		\phpbb\config\config $config,
-		\phpbb\profilefields\manager $pf_manager,
-		\phpbb\template\template $template,
-		\phpbb\request\request $request
+		protected \phpbb\pagination $pagination,
+		protected \phpbb\db\driver\driver_interface $db,
+		protected \phpbb\config\config $config,
+		protected \phpbb\profilefields\manager $pf_manager,
+		protected \phpbb\template\template $template,
+		protected \phpbb\request\request $request,
 	)
 	{
-		$this->pagination = $pagination;
-		$this->db		  = $db;
-		$this->config	  = $config;
-		$this->pf_manager = $pf_manager;
-		$this->template	  = $template;
-		$this->request	  = $request;
-
 		$this->sortby	  = $this->request->variable('imcsort', '');
 		$this->sort_dir	  = $this->request->variable('sd', 'a');
 		$this->first_char = $this->request->variable('first_char', '');
