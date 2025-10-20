@@ -14,7 +14,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class sbcf_main_listener implements EventSubscriberInterface
 {
-	protected int $total_users;
+	protected int	 $total_users;
 	protected string $sortby;
 	protected string $sort_dir;
 	protected string $first_char;
@@ -47,7 +47,7 @@ class sbcf_main_listener implements EventSubscriberInterface
 	{
 		$this->total_users = $event['total_users'];
 
-		$params = $event['params'];
+		$params	  = $event['params'];
 		$params[] = "imcsort=" . $this->request->variable('imcsort', '');
 		$event['params'] = $params;
 	}
