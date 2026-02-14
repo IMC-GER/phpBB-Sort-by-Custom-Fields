@@ -85,7 +85,7 @@ class sbcf_main_listener implements EventSubscriberInterface
 					],
 				],
 				'WHERE'     => $this->db->sql_in_set('u.user_type', $user_types) . $sql_where,
-				'ORDER_BY'  => 'pf.pf_' . $this->sortby . ' ' . $sort_dir . ', u.username_clean ASC',
+				'ORDER_BY'  => $this->db->sql_lower_text('pf.pf_' . $this->sortby) . ' ' . $sort_dir . ', u.username_clean ASC',
 			];
 
 			$sql    = $this->db->sql_build_query('SELECT', $sql_array);
