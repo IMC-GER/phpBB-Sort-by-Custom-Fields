@@ -25,7 +25,8 @@ Go to "ACP" > "Customise" > "Manage extensions" and enable the "Sort by custom f
 - To permanently uninstall, click `Delete Data`, then delete the `sortbycustomfields` folder from `phpBB3/ext/imcger/`.
 
 ## Changelog
-- v1.0.1 16.02.2026
+- v1.0.1 13.03.2026
+  - Fixed: SQL injection risk by GET var ´imcsort´ 
   - Fixed: Sorted by uppercase and lowercase letters
 
 - v1.0.0 20.10.2025

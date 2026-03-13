@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "This extension allows you to sort the member list according to the custom profile fields.",
     "version": "1.0.1",
-    "time": "2026-02-16",
+    "time": "2026-03-13",
     "keywords": ["phpbb", "extension", "sortbycustomfields"],
     "license": "GPL-2.0-only",
     "authors": [

@@ -61,7 +61,8 @@ class sbcf_main_listener implements EventSubscriberInterface
 
 		if ($this->sortby)
 		{
-			$start = $this->pagination->validate_start($start, $this->config['topics_per_page'], $this->total_users);
+			$start	= $this->pagination->validate_start($start, $this->config['topics_per_page'], $this->total_users);
+			$sortby	= $this->db->sql_escape($this->sortby);
 
 			if ($this->first_char == 'other')
 			{
@@ -85,7 +86,7 @@ class sbcf_main_listener implements EventSubscriberInterface
 					],
 				],
 				'WHERE'     => $this->db->sql_in_set('u.user_type', $user_types) . $sql_where,
-				'ORDER_BY'  => $this->db->sql_lower_text('pf.pf_' . $this->sortby) . ' ' . $sort_dir . ', u.username_clean ASC',
+				'ORDER_BY'  => $this->db->sql_lower_text('pf.pf_' . $sortby) . ' ' . $sort_dir . ', u.username_clean ASC',
 			];
 
 			$sql    = $this->db->sql_build_query('SELECT', $sql_array);
